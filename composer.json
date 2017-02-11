@@ -1,5 +1,5 @@
 {
-	"name": "webwings/tracy",
+	"name": "webwings/tracy/sessionpanel",
 	"description": "Tracy addon",
 	"keywords": ["SessionPanel", "Tracy", "session", "nette"],
 	"license": "MIT",
