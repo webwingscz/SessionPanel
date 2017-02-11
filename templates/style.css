@@ -1,0 +1,85 @@
+#nette-debug-session-panel-title img {
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+	left: -2px;
+}
+
+#nette-debug-session-panel {
+	max-width: 800px;
+	width: 100%;
+	min-width:  370px;
+	max-height: 600px;
+	overflow: auto;
+}
+
+#nette-debug-session-panel table {
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+#nette-debug-session-panel .key {
+	width: 100px !important;
+	font-weight: bolder;
+}
+
+#nette-debug-session-panel thead td {
+	font-weight: bolder;
+	font-size: 14px;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+#nette-debug-session-panel pre {
+	width: 300px !important;
+	overflow:  auto;
+	padding: 0;
+	border: 0px none !important;
+	border-radius: 0px !important;
+	box-shadow: none !important;
+}
+
+#nette-debug-session-panel h1,
+#nette-debug-session-panel h2 {
+	margin: 0 !important;
+	font-family: inherit !important;
+	font-weight: bold !important;
+	color: inherit !important;
+	text-rendering: optimizelegibility !important;
+}
+
+#nette-debug-session-panel h1 {
+	font-size: 30px !important;
+	line-height: 36px !important;
+}
+
+#nette-debug-session-panel h2{
+	font-size: 24px !important;
+	line-height: 36px !important;
+}
+
+#nette-debug-session-panel strong{
+	font-weight: bold !important;
+}
+
+#nette-debug-session-panel-title .pull-right,
+#nette-debug-session-panel .pull-right {
+	float: right !important;
+}
+
+#nette-debug-session-panel-title .expiration,
+#nette-debug-session-panel .expiration {
+	font-weight: normal !important;
+	font-size: 80%;
+}
+
+#nette-debug-session-panel-title .expiration {
+	margin-right: 5px;
+	font-size: 70%;
+	line-height: 200%;
+	vertical-align: middle;
+}
+
+#nette-debug-session-panel [title]{
+	cursor: help;
+}

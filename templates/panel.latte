@@ -1,0 +1,73 @@
+{**
+ * Layout for panel of Session Debug panel
+ *
+ * @author Pavel Železný <info@pavelzelezny.cz>
+ *
+ * @param string $basePath Path to directory where compnent is situated
+ * @param \Nette\Http\Session $session
+ * @param array $sessionMetaStore contain NetteFramework metadata about sessions
+ * @param array $sessionMaxTime maximal session lifetime in seconds
+ *}
+
+	{stylesheet $basePath.'/templates/style.css'}
+	<h1 id="nette-debug-session-panel-title">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMRJREFUeNpiZCAT2Orr6QOpAhYyNdcDqQAgdmAhw9YFQKwAxAaHL176yESirRegmh2Amh+CxFlIsNUAKpQA1HwRJs9EpK3Imjciq2Eh0lYQmADUvBBdLRMRtoLAAqDmQmyWERuIBlBXYQBmdIFHL18elJcQ3wBkWgCxBFQYRGcAxcHyxLjgAQ4xDHFGHAG4ARrfMI0N2AIQwwCgZnuoZgFCGjGiEag5Hhp1II0FhDSiGADU3A/NHAnEakSJd6jtZAGAAAMA89NIrMVVIPoAAAAASUVORK5CYII="/>
+		Session Panel
+		<span class="pull-right expiration">
+			<strong>Max liftime:</strong> {$sessionMaxTime} s
+		</span>
+	</h1>
+	<div id="nette-debug-session-panel">
+		{if $session !== FALSE}
+			<table n:foreach="$session->getIterator() as $section" n:if="in_array($section,$hiddenSections) === FALSE">
+				<thead>
+					<td colspan="2">
+						{$section}
+						<span class="pull-right expiration">
+							<strong>Expiration: </strong>
+							{ifset $sessionMetaStore[$section]['']['T']}
+								<span title="Expiration after actual shown seconds number.">{$sessionMetaStore[$section]['']['T'] - time()} s</span>
+							{elseif (isset($sessionMetaStore[$section]['']['B'])) && ($sessionMetaStore[$section]['']['B'] === TRUE)}
+								<span title="Expiration after browser close.">Browser</span>
+							{else}
+								<span title="Expiration is not set.">No</span>
+							{/ifset}
+						</span>
+					</td>
+				</thead>
+				<tbody >
+					<tr n:foreach="$session->getSection($section)->getIterator() as $key => $value">
+						<td class="key">
+							{$key}
+							<div class="expiration">
+								<strong>Expiration: </strong>
+								{ifset $sessionMetaStore[$section][$key]['T']}
+									<span title="Expiration after actual shown seconds number.">{$sessionMetaStore[$section][$key]['T'] - time()} s</span>
+								{elseif (isset($sessionMetaStore[$section][$key]['B'])) && ($sessionMetaStore[$section][$key]['B'] === TRUE)}
+									<span title="Expiration after browser close.">Browser</span>
+								{else}
+									<span title="Expiration is not set.">No</span>
+								{/ifset}
+							</div>
+						</td>
+						<td>
+							{dumper $value}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		{else}
+			<table>
+				<tr>
+					<td>
+						Session is not started yet.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{dumper $_SESSION}
+					</td>
+				</tr>
+			</table>
+		{/if}
+	</div>
