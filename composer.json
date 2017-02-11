@@ -1,5 +1,5 @@
 {
-	"name": "webwings/tracy/sessionpanel",
+	"name": "Webwings/Tracy/SessionPanel",
 	"description": "Tracy addon",
 	"keywords": ["SessionPanel", "Tracy", "session", "nette"],
 	"license": "MIT",
@@ -9,11 +9,6 @@
 			"email": "juradee@gmail.com"
 		}
 	],
-	"autoload": {
-		"psr-0": {
-			"SessionPanel": ""
-		}
-	},
 	"require": {
 		"tracy/tracy": "~2.4"
 	}
