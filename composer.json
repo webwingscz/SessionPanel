@@ -9,6 +9,9 @@
 			"email": "juradee@gmail.com"
 		}
 	],
+	"autoload": {
+		"classmap": ["/"]
+	},
 	"require": {
 		"tracy/tracy": "~2.4"
 	}
