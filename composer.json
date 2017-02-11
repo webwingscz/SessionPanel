@@ -15,6 +15,6 @@
 		}
 	},
 	"require": {
-		"tracy/tracy": "~2.4",
+		"tracy/tracy": "~2.4"
 	}
 }
