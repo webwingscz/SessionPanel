@@ -92,4 +92,8 @@ class SessionPanel implements Tracy\IBarPanel {
         }
     }
 
+    public static function renderException(){
+    }
+
+
 }
