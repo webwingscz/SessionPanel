@@ -1,4 +1,5 @@
 {
+	"abandoned": "nette/http",
 	"name": "webwings/tracy-session-panel",
 	"description": "Tracy addon",
 	"keywords": ["SessionPanel", "Tracy", "session", "nette"],
